@@ -1,0 +1,14 @@
+{
+  "name": "ExcelExchange_Bot",
+  "version": "1.0.0",
+  "description": "Bot para automatizar ofertas y demandas",
+  "main": "bot.js",
+  "dependencies": {
+    "edit-google-spreadsheet": "^0.2.21",
+    "money": "^0.2.0",
+    "moment": "^2.17.1",
+    "node-telegram-bot-api": "^0.26.0",
+    "openexchangerates-api": "^0.0.5"
+  },
+  "devDependencies": {}
+}
