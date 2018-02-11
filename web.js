@@ -9,6 +9,11 @@ app.get('/', function (req, res) {
   res.json({ version: packageInfo.version });
 });
 
+app.get('/heartbeat', function (req, res) {
+  res.send("ok");
+});
+
+
 var server = app.listen(process.env.PORT, "0.0.0.0", function () {
   var host = server.address().address;
   var port = server.address().port;
