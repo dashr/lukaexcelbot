@@ -18,5 +18,10 @@
     "node-telegram-bot-api": "^0.26.0",
     "openexchangerates-api": "^0.0.5"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "7.5.0",
+    "npm": "4.1.2",
+    "yarn": "1.4.0"
+  }
 }
