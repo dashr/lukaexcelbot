@@ -20,6 +20,8 @@ var server = app.listen(process.env.PORT, "0.0.0.0", function () {
   console.log('Servidor web inicio en http://%s:%s', host, port);
 });
 
+console.log('Bot token %s', bot.token);
+
 module.exports = function (bot) {
   app.post('/' + bot.token, function (req, res) {
 
