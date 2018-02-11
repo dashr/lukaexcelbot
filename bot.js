@@ -1,6 +1,6 @@
 var TelegramBot = require('node-telegram-bot-api');
 var brain = require('./brain');
-var token =  process.env.TOKENTELEGRAM || false;
+var token =  process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 
 var bot = new TelegramBot(token, { polling: true });
 
