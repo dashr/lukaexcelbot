@@ -4,7 +4,7 @@ var token =  process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 var url = process.env.APP_URL || 'https://<app-name>.herokuapp.com:443';
 
 if(process.env.NODE_ENV === 'production') {
-  bot = new TelegramBot(token);
+  bot = new TelegramBot(token, { debug: true });
   bot.setWebHook( url + bot.token);
 }
 else {
