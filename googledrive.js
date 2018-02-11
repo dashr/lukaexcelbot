@@ -35,8 +35,10 @@ drive.guardar = function(spreadsheet) {
 drive.cargarSpreadsheet = function(callback) {
   Spreadsheet.load({
     debug: true,
-    spreadsheetName: 'Luka Trading',
-    worksheetName: 'ACTUALIZACION_compra',
+    //spreadsheetName: 'Luka Trading',
+    spreadsheetId: '1yyNkWD0dWKT3j_hc_9xFHcyeKW6J3_WCFXmBE-jIEOw',
+    //worksheetName: 'ACTUALIZACION_compra',
+    worksheetId: "omb27qt",
     "oauth2": {
       "client_id": process.env.GOOGLE_CLIENT_ID || 'GOOGLE_CLIENT_ID',
       "client_secret": process.env.GOOGLE_CLIENT_SECRET || 'GOOGLE_CLIENT_SECRET',
