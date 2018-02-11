@@ -25,7 +25,7 @@ console.log('Bot token %s', bot.token);
 module.exports = function (bot) {
   app.post('/' + bot.token, function (req, res) {
 
-    console.log(req.body);
+    //console.log(req.body);
 
     bot.processUpdate(req.body);
     res.sendStatus(200);
