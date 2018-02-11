@@ -2,11 +2,19 @@
   "name": "ExcelExchange_Bot",
   "version": "1.0.0",
   "description": "Bot para automatizar ofertas y demandas",
-  "main": "bot.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "switch_to_dev": "export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TELEGRAM_TOKEN/setWebhook?url= --delete-after && node index.js"
+  },
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
     "edit-google-spreadsheet": "^0.2.21",
-    "money": "^0.2.0",
+    "express": "^4.16.2",
     "moment": "^2.17.1",
+    "money": "^0.2.0",
     "node-telegram-bot-api": "^0.26.0",
     "openexchangerates-api": "^0.0.5"
   },
