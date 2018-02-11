@@ -2,7 +2,15 @@ var TelegramBot = require('node-telegram-bot-api');
 var brain = require('./brain');
 var token =  process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 
-var bot = new TelegramBot(token, { polling: false });
+if(process.env.NODE_ENV === 'production') {
+  bot = new TelegramBot(token);
+  bot.setWebHook(process.env.HEROKU_URL + bot.token);
+}
+else {
+  bot = new TelegramBot(token, { polling: true });
+}
+
+console.log('Bot server started in ' + process.env.NODE_ENV + ' mode');
 
 var procesar_compra = function(msg, match) {
   console.log('msg:', msg, 'match:', match)
@@ -26,10 +34,18 @@ var procesar_venta = function(msg, match) {
   bot.sendMessage(chatId, "Su orden de venta, " + resp + " ha sido agregada");
 }
 
+var procesar_echo = function(msg) {
+  console.log('msg:', msg)
 
+  var name = msg.from.first_name;
+  bot.sendMessage(msg.chat.id, 'Hola, ' + name + '!').then(function () {
+    // reply sent!
+  });
+}
 
 bot.onText(/\/compra (.+)/, procesar_compra);
 bot.onText(/\/venta (.+)/, procesar_venta);
+bot.onText(/\/echo (.+)/, procesar_echo);
 
 
-console.log('Bot listening..')
+module.exports = bot;
