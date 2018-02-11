@@ -21,7 +21,7 @@ var server = app.listen(process.env.PORT, "0.0.0.0", function () {
 });
 
 module.exports = function (bot) {
-  app.post('/' + bot.token, function (req, res) {
+  app.post('/' + process.env.TELEGRAM_TOKEN, function (req, res) {
     bot.processUpdate(req.body);
     res.sendStatus(200);
   });

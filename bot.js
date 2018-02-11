@@ -2,13 +2,10 @@ var TelegramBot = require('node-telegram-bot-api');
 var brain = require('./brain');
 var token =  process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 var url = process.env.APP_URL || 'https://<app-name>.herokuapp.com:443';
-var options = {
-  webHook: { port: process.env.PORT }
-};
 
 if(process.env.NODE_ENV === 'production') {
-  bot = new TelegramBot(token, options);
-  bot.setWebHook(`${url}/bot${token}`);
+  bot = new TelegramBot(token);
+  bot.setWebHook( url + bot.token);
 }
 else {
   bot = new TelegramBot(token, { polling: true });
