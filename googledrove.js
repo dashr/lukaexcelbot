@@ -38,9 +38,9 @@ drove.cargarSpreadsheet = function(callback) {
     spreadsheetName: 'Luka Trading',
     worksheetName: 'ACTUALIZACION_venta',
     "oauth2": {
-    "client_id": "YOUR CLIENT ID",
-    "client_secret": "YOUR CLIENT SECRET",
-    "refresh_token": "YOUR REFRESH TOKEN"
+      "client_id": process.env.GOOGLE_CLIENT_ID || 'GOOGLE_CLIENT_ID',
+      "client_secret": process.env.GOOGLE_CLIENT_SECRET || 'GOOGLE_CLIENT_SECRET',
+      "refresh_token": process.env.GOOGLE_REFRESH_TOKEN || 'GOOGLE_REFRESH_TOKEN'
     }
 
   }, function sheetReady(err, spreadsheet) {
