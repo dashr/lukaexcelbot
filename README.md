@@ -11,7 +11,7 @@ Bot de telegram basado en un trading informal, para automatizar las ordenes de c
 
 ## Uso
 
-Para usar una version en produccion hazte miembro de [Luka Trading](https://t.me/tradingluka) en Telegram.
+Para usar una versión en producción hazte miembro de [Luka Trading](https://t.me/tradingluka) en Telegram.
 
 
 ## Desarollo para Contribuciones
@@ -22,7 +22,7 @@ Para usar una version en produccion hazte miembro de [Luka Trading](https://t.me
 * [Bot en Telegram](https://core.telegram.org/bots)
 * Google Sheet (requiré oAuth2)
 
-En github, empiezen con un Fork para tener su priopia copia. Y haz clone local.
+En github, empiezan con un Fork para tener su propia copia. Y haz clone local.
 
 ```bash
 $ git clone git@github.com:[TU USUARIO]/lukaexcelbot.git
@@ -34,7 +34,7 @@ $ cp .env_example .env
 $ npm start
 ```
 
-Se requiren configurar estos varibales ambientales en ```.env```
+Se requiere configurar estos variables ambientales en ```.env```
 
 ```bash
 TELEGRAM_TOKEN=
@@ -43,8 +43,9 @@ GOOGLE_CLIENT_SECRET=
 GOOGLE_REFRESH_TOKEN=
 ```
 
-En desarollo local, funciona con Polling, but en produccion es necessario correr con un [WebHook](https://core.telegram.org/bots/api#setwebhook). Este repo funciona en Heroku, pero se podria montar en cualquir servidor que puede servir NodeJS como [Now](https://zeit.co/now), OpenShift, [Dokku](http://dokku.viewdocs.io/dokku/), o cualquir VPS como [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-8) o [Vultr](https://www.vultr.com/features/). Mas ejemplos en [varias plataformas](https://github.com/yagop/node-telegram-bot-api/tree/master/examples/webhook).
+En desarrollo local, funciona con Polling, but en produccion es necessario correr con un [WebHook](https://core.telegram.org/bots/api#setwebhook). Este repo funciona en Heroku, pero se podria montar en cualquir servidor que puede servir NodeJS como [Now](https://zeit.co/now), OpenShift, [Dokku](http://dokku.viewdocs.io/dokku/), o cualquir VPS como [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-8) o [Vultr](https://www.vultr.com/features/). Mas ejemplos en [varias plataformas](https://github.com/yagop/node-telegram-bot-api/tree/master/examples/webhook).
 
+##### Favor de contribuir vía un Pull Request aquí en GitHub.
 
 ## ❤️ Creditos
 
@@ -53,7 +54,7 @@ Autores
 * [Patricio Mallea Gonzáles](https://github.com/patriciomalleag)
 * [dashr](https://github.com/dashr)
 
-Gracias a las heramientas de
+Gracias a las herramientas de
 
 * [Node.js Telegram Bot API](https://github.com/yagop/node-telegram-bot-api)
 * [Edit Google Spreadsheet](https://github.com/jpillora/node-edit-google-spreadsheet)
@@ -63,7 +64,7 @@ Inspirado por
 * [GastosBot](https://github.com/guerrerocarlos/TheGastosBot-Telegram)
 
 
-Recursos:
+Recursos
 
 * [Pagina Oficial de LUKA](https://www.cryptoluka.cl/)
 * [Equipo Luka](https://github.com/cryptoluka/cryptoluka)
