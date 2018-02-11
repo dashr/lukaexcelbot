@@ -13,20 +13,14 @@ app.get('/heartbeat', function (req, res) {
   res.send("ok");
 });
 
-
 var server = app.listen(process.env.PORT, "0.0.0.0", function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Servidor web inicio en http://%s:%s', host, port);
 });
 
-console.log('Bot token %s', bot.token);
-
 module.exports = function (bot) {
   app.post('/' + bot.token, function (req, res) {
-
-    //console.log(req.body);
-
     bot.processUpdate(req.body);
     res.sendStatus(200);
   });
