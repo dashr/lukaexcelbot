@@ -1,5 +1,5 @@
+"use strict";
 //drive actualiza la compra
-
 var Spreadsheet = require('edit-google-spreadsheet');
 var drive = module.exports = {}
 

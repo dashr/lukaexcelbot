@@ -1,5 +1,5 @@
+"use strict";
 //drove actualiza venta
-
 var Spreadsheet = require('edit-google-spreadsheet');
 var drove = module.exports = {}
 
