@@ -2,6 +2,9 @@
 var drive = require('./googledrive.js');
 var drove = require('./googledrove.js');
 var moment = require('moment');
+var shortid = require('shortid');
+var Redis = require('ioredis');
+var redis = new Redis(process.env.REDIS_URL);
 
 var cerebro = module.exports = {};
 
@@ -17,6 +20,12 @@ cerebro.procesar_oracioncompra = function(oracion, spreadsheet, msg, bandera) {
   if (bandera !== false) {
     drive.agregar(spreadsheet, datos);
   }
+  //generate orderid
+  var orderid = 'order:'+ shortid.generate();
+  //guardar orden
+  redis.hmset(orderid, 'nombre', datos.nombre, 'telegram', datos.telegram, 'precio', datos.precio, 'volumen', datos.volumen, 'fecha', moment().valueOf() );
+  //guardar en libro de orden
+  redis.zadd('buy', datos.precio, orderid);
 }
 
 cerebro.procesar_oracionventa = function(oracion, spreadsheet, msg, bandera) {
@@ -31,19 +40,26 @@ cerebro.procesar_oracionventa = function(oracion, spreadsheet, msg, bandera) {
   if (bandera !== false) {
     drove.agregar(spreadsheet, datos);
   }
+  //generate orderid
+  var orderid = 'order:'+ shortid.generate();
+  //guardar orden
+  redis.hmset(orderid, 'nombre', datos.nombre, 'telegram', datos.telegram, 'precio', datos.precio, 'volumen', datos.volumen, 'fecha', moment().valueOf() );
+  //guardar en libro de orden
+  redis.zadd('sell', datos.precio, orderid);
 }
+
 
 
 cerebro.actualiza_compra = function(oracion, msg) {
   drive.cargarSpreadsheet(function(spreadsheet) {
     cerebro.procesar_oracioncompra(oracion, spreadsheet, msg);
     drive.guardar(spreadsheet);
-  })
+  });
 }
 
 cerebro.actualiza_venta = function(oracion, msg) {
   drove.cargarSpreadsheet(function(spreadsheet) {
     cerebro.procesar_oracionventa(oracion, spreadsheet, msg);
     drove.guardar(spreadsheet);
-  })
+  });
 }

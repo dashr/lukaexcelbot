@@ -12,11 +12,13 @@
     "dotenv": "^5.0.0",
     "edit-google-spreadsheet": "^0.2.21",
     "express": "^4.16.2",
+    "ioredis": "^3.2.2",
     "helmet": "^3.11.0",
     "moment": "^2.17.1",
     "money": "^0.2.0",
     "node-telegram-bot-api": "^0.30.0",
-    "openexchangerates-api": "^0.0.5"
+    "openexchangerates-api": "^0.0.5",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {},
   "engines": {
