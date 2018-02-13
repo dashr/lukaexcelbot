@@ -16,9 +16,9 @@ No hay version en produccion. Se quedo parado en puro Test.
 
 ## Desarollo para Contribuciones
 
-* [NodeJS 8+](https://nodejs.org/en/)
+* [Node 8+](https://nodejs.org/en/)
 * [Yarn](https://yarnpkg.com/en/)
-* [NVM](https://github.com/creationix/nvm)
+* [Nvm](https://github.com/creationix/nvm)
 * [Bot en Telegram](https://core.telegram.org/bots)
 * Google Sheet (requiré oAuth2)
 
