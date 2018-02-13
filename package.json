@@ -16,7 +16,8 @@
     "moment": "^2.17.1",
     "money": "^0.2.0",
     "node-telegram-bot-api": "^0.30.0",
-    "openexchangerates-api": "^0.0.5"
+    "openexchangerates-api": "^0.0.5",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {},
   "engines": {
