@@ -1,9 +1,11 @@
 "use strict";
 var express = require('express');
+var helmet = require('helmet');
 var packageInfo = require('./package.json');
 var bodyParser = require('body-parser');
 
 var app = express();
+app.use(helmet());
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
