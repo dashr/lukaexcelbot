@@ -21,11 +21,11 @@ cerebro.procesar_oracioncompra = function(oracion, spreadsheet, msg, bandera) {
     drive.agregar(spreadsheet, datos);
   }
   //generate orderid
-  var orderid = 'order:'+ shortid.generate();
+  var orderid = 'orden:'+ shortid.generate();
   //guardar orden
   redis.hmset(orderid, 'nombre', datos.nombre, 'telegram', datos.telegram, 'precio', datos.precio, 'volumen', datos.volumen, 'fecha', moment().valueOf() );
   //guardar en libro de orden
-  redis.zadd('buy', datos.precio, orderid);
+  redis.zadd('compra', datos.precio, orderid);
 }
 
 cerebro.procesar_oracionventa = function(oracion, spreadsheet, msg, bandera) {
@@ -41,11 +41,11 @@ cerebro.procesar_oracionventa = function(oracion, spreadsheet, msg, bandera) {
     drove.agregar(spreadsheet, datos);
   }
   //generate orderid
-  var orderid = 'order:'+ shortid.generate();
+  var orderid = 'orden:'+ shortid.generate();
   //guardar orden
   redis.hmset(orderid, 'nombre', datos.nombre, 'telegram', datos.telegram, 'precio', datos.precio, 'volumen', datos.volumen, 'fecha', moment().valueOf() );
   //guardar en libro de orden
-  redis.zadd('sell', datos.precio, orderid);
+  redis.zadd('venta', datos.precio, orderid);
 }
 
 
